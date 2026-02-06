@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cohpsl8klcsfv"]
+
+[ext_resource type="Script" path="res://object/round/round.gd" id="1_scbqp"]
+[ext_resource type="PackedScene" uid="uid://e6d46fjq45sf" path="res://object/round/dice_bag.tscn" id="2_u5g0k"]
+[ext_resource type="PackedScene" uid="uid://cxyt75n37qv52" path="res://object/round/dice_stock.tscn" id="3_j46a8"]
+
+[node name="Round" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_scbqp")
+
+[node name="DiceContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 150.0
+
+[node name="DiceBag" parent="DiceContainer" instance=ExtResource("2_u5g0k")]
+layout_mode = 2
+
+[node name="Reroll" type="Button" parent="DiceContainer"]
+custom_minimum_size = Vector2(150, 31)
+layout_mode = 2
+text = "REROLL"
+
+[node name="DiceStock" parent="DiceContainer" instance=ExtResource("3_j46a8")]
+layout_mode = 2
+
+[connection signal="pressed" from="DiceContainer/Reroll" to="." method="_on_reroll_pressed"]

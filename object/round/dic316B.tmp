@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxyt75n37qv52"]
+
+[ext_resource type="Script" path="res://object/round/dice_stock.gd" id="1_1vdmr"]
+
+[node name="DiceStock" type="Panel"]
+offset_right = 150.0
+offset_bottom = 300.0
+script = ExtResource("1_1vdmr")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 2
