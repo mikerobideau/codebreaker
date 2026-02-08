@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cxyt75n37qv52"]
 
-[ext_resource type="Script" path="res://object/round/dice_stock.gd" id="1_1vdmr"]
+[ext_resource type="Script" path="res://object/dice/dice_stock.gd" id="1_1vdmr"]
 
 [node name="DiceStock" type="Control"]
 custom_minimum_size = Vector2(150, 250)

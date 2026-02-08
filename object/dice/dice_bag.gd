@@ -1,7 +1,7 @@
 extends Panel
 class_name DiceBag
 
-var DieScene = preload("res://object/round/die.tscn")
+var DieScene = preload("res://object/dice/die.tscn")
 
 var dice: Array[Node]
 var DiceColor = DiceData.DiceColor

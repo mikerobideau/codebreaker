@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://e6d46fjq45sf"]
 
-[ext_resource type="Script" path="res://object/round/dice_bag.gd" id="1_ejtw4"]
+[ext_resource type="Script" path="res://object/dice/dice_bag.gd" id="1_ejtw4"]
 
 [node name="DiceBag" type="Panel"]
 custom_minimum_size = Vector2(150, 150)

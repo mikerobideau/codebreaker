@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cohpsl8klcsfv"]
+[gd_scene load_steps=5 format=3 uid="uid://cohpsl8klcsfv"]
 
 [ext_resource type="Script" path="res://object/round/round.gd" id="1_scbqp"]
-[ext_resource type="PackedScene" uid="uid://e6d46fjq45sf" path="res://object/round/dice_bag.tscn" id="2_u5g0k"]
-[ext_resource type="PackedScene" uid="uid://cxyt75n37qv52" path="res://object/round/dice_stock.tscn" id="3_j46a8"]
+[ext_resource type="PackedScene" uid="uid://e6d46fjq45sf" path="res://object/dice/dice_bag.tscn" id="2_u5g0k"]
+[ext_resource type="PackedScene" uid="uid://cxyt75n37qv52" path="res://object/dice/dice_stock.tscn" id="3_j46a8"]
+[ext_resource type="PackedScene" uid="uid://cjyaf3frsjbw6" path="res://object/control_panel/control_panel.tscn" id="4_fs7hh"]
 
 [node name="Round" type="Control"]
 layout_mode = 3
@@ -28,5 +29,12 @@ text = "REROLL"
 
 [node name="DiceStock" parent="DiceContainer" instance=ExtResource("3_j46a8")]
 layout_mode = 2
+
+[node name="ControlPanel" parent="." instance=ExtResource("4_fs7hh")]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+grow_vertical = 0
 
 [connection signal="pressed" from="DiceContainer/Reroll" to="." method="_on_reroll_pressed"]

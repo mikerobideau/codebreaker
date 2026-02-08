@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0gbafghgdn06"]
+
+[ext_resource type="Script" path="res://object/control_panel/interface.gd" id="1_jm4r5"]
+
+[node name="Interface" type="Panel"]
+custom_minimum_size = Vector2(120, 120)
+offset_right = 80.0
+offset_bottom = 80.0
+script = ExtResource("1_jm4r5")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -23.0
+offset_right = 21.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Label"

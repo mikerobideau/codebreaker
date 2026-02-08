@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5prwguaw5qq4"]
 
-[ext_resource type="Script" path="res://object/round/die.gd" id="1_2kkwf"]
+[ext_resource type="Script" path="res://object/dice/die.gd" id="1_2kkwf"]
 
 [node name="Die" type="Panel"]
 custom_minimum_size = Vector2(50, 50)
