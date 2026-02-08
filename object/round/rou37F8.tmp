@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://e6d46fjq45sf" path="res://object/dice/dice_bag.tscn" id="2_u5g0k"]
 [ext_resource type="PackedScene" uid="uid://cxyt75n37qv52" path="res://object/dice/dice_stock.tscn" id="3_j46a8"]
 [ext_resource type="PackedScene" uid="uid://cjyaf3frsjbw6" path="res://object/control_panel/control_panel.tscn" id="4_fs7hh"]
-[ext_resource type="PackedScene" uid="uid://ciost6dkl2i52" path="res://object/password/password.tscn" id="5_7ab3u"]
+[ext_resource type="Script" path="res://object/password/password.gd" id="5_4s3fr"]
 
 [node name="Round" type="Control"]
 layout_mode = 3
@@ -14,6 +14,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_scbqp")
+
+[node name="Password" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_4s3fr")
 
 [node name="DiceContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -37,15 +52,5 @@ layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 grow_vertical = 0
-
-[node name="Password" parent="." instance=ExtResource("5_7ab3u")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
 
 [connection signal="pressed" from="DiceContainer/Reroll" to="." method="_on_reroll_pressed"]
