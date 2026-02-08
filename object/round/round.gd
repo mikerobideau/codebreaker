@@ -13,7 +13,6 @@ var HAND_SIZE = 5
 var selected_die: Die
 
 func _ready() -> void:
-	print_debug('round ready')
 	round_state = RoundState.new()
 	dice_bag.populate(NUM_DICE)
 	dice_stock.add(dice_bag.select_random(HAND_SIZE))
@@ -30,5 +29,15 @@ func on_interface_selected(interface: Interface) -> void:
 	if !selected_die or !interface.is_empty():
 		return
 	var matches = interface.data.matcher.match(selected_die)
+	if !matches:
+		return
 	interface.insert_die(selected_die)
 	selected_die = null
+	interface.data.resolver.resolve(get_resolver_context(interface))
+	
+func get_resolver_context(interface: Interface) -> ResolverContext:
+	var context = ResolverContext.new()
+	context.interface = interface
+	context.password = password
+	return context
+	

@@ -33,13 +33,11 @@ func update_labels() -> void:
 
 func insert_die(die: Die) -> void:
 	if self.die:
-		print_debug('die already set')
 		return
 	self.die = die
 	placeholder.queue_free()
 	if die.get_parent():
 		die.get_parent().remove_child(die)
-	print_debug('adding die')
 	slot.add_child(die)
 	
 func is_empty() -> bool:

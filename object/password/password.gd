@@ -9,7 +9,6 @@ var password: String
 var factory: PasswordFactory
 
 func _ready() -> void:
-	print_debug('password ready')
 	factory = PasswordFactory.new()
 	factory.load_words()
 	password = factory.random_word()
@@ -25,3 +24,6 @@ func add_letters() -> void:
 		var letter_node = LetterScene.instantiate()
 		letter_node.value = letter
 		letters.add_child(letter_node)
+		
+func get_letters() -> Array[Node]:
+	return letters.get_children()
