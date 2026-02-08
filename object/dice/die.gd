@@ -1,5 +1,7 @@
-extends Panel
+extends Button
 class_name Die
+
+signal clicked(die: Die)
 
 @onready var label = $Label
 
@@ -10,6 +12,9 @@ func _ready() -> void:
 	size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 	pass
 	
+func _on_pressed() -> void:
+	clicked.emit(self)
+	
 func init(data: DiceData) -> void:
 	self.data = data
 	refresh_label(value)
@@ -19,7 +24,6 @@ func set_value(new_value: int) -> void:
 	refresh_label(new_value)
 		
 func refresh_label(new_value: int) -> void:
-	print_debug('refresh label')
 	if label:
 		label.text = str(new_value)
 	

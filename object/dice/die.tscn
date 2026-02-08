@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://object/dice/die.gd" id="1_2kkwf"]
 
-[node name="Die" type="Panel"]
+[node name="Die" type="Button"]
 custom_minimum_size = Vector2(50, 50)
 offset_right = 50.0
 offset_bottom = 50.0
@@ -26,3 +26,5 @@ text = "0
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
