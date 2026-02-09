@@ -5,7 +5,7 @@ signal clicked(interface: Interface)
 
 @onready var label = $Label
 @onready var slot = $Slot
-@onready var placeholder = $Slot/Placeholder
+@onready var content = $Slot/Content
 
 var data: InterfaceData
 var die: Die = null
@@ -28,17 +28,20 @@ func set_data(d: InterfaceData) -> void:
 func update_labels() -> void:
 	if label and data:
 		label.text = data.label
-	if placeholder and data:
-		placeholder.text = data.match_label
+	if content and data:
+		if die:
+			content.text = str(die.value)
+		else:
+			content.text = data.match_label
 
 func insert_die(die: Die) -> void:
 	if self.die:
 		return
-	self.die = die
-	placeholder.queue_free()
 	if die.get_parent():
 		die.get_parent().remove_child(die)
-	slot.add_child(die)
+	self.die = die
+	update_labels()
+	print_debug('slot has ' + str(slot.get_child_count()) + ' children')
 	
 func is_empty() -> bool:
 	if die == null:
